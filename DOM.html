@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>DOM</title>
+        <meta name="description" content="practice" />
+        <link rel="stylesheet" href="css/master.css" />
+        <link rel="icon" href="Imgs/icon.svg" type="image/svg+xml" />
+    </head>
+
+    <body>
+        <h2>Youtube subsribe button</h2>
+        <button
+            onclick="
+        ytSub();
+        ">
+            subscribe
+        </button>
+        <h2>Amazon shipping costs calculator</h2>
+        <input
+            onkeydown="onEnterCalc();"
+            id="price"
+            class="price"
+            placeholder="Enter the price here"
+            type="number" />
+        <button
+            id="calculate"
+            onclick="
+        calculateShipping();
+        ">
+            calculate
+        </button>
+        <p class="show-cost"></p>
+        <script>
+            function ytSub() {
+                const buttonElement = document.querySelector('button');
+                if (buttonElement.innerText === 'subscribe') {
+                    buttonElement.innerHTML = 'subscribed';
+                } else {
+                    buttonElement.innerHTML = 'subscribe';
+                }
+            }
+            function calculateShipping() {
+                const inputElement = document.querySelector('.price');
+                let cost = Number(inputElement.value);
+                if (cost < 40) {
+                    cost = cost + 15;
+                }
+                document.querySelector(
+                    '.show-cost'
+                ).innerHTML = `Cost is $${cost} including shipping`;
+            }
+            function onEnterCalc() {
+                if (event.key === 'Enter') {
+                    calculateShipping();
+                }
+            }
+        </script>
+    </body>
+</html>

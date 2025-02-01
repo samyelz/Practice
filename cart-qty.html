@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>JS variable add up</title>
+  <meta name="description" content="practice" />
+  <link rel="stylesheet" href="css/master.css">
+  <link rel="icon" href="Imgs/icon.svg" type="image/svg+xml">
+</head>
+
+<body>
+  <button onclick="
+    console.log(`Cart Quantity is ${cartQty}`);
+    
+    ">Show Quantity</button>
+  <button onclick="
+  cartQty ++;
+  ">Add to Cart</button>
+
+  <button onclick="
+  cartQty += 2;
+  ">+2</button>
+
+  <button onclick="
+  cartQty += 3;
+  ">+3</button>
+
+  <button onclick="
+  cartQty = 0;
+  ">Reset Cart</button>
+  <script>
+    let cartQty = 0;
+  </script>
+</body>
+
+</html>
