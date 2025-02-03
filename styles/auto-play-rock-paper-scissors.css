@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(25, 25, 25);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.player-move {
+    height: 100px;
+    width: 100px;
+    background: none;
+    border: 3px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.move-image {
+    height: 50px;
+    width: 50px;
+}
+.reset,
+#auto-play {
+    background-color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+.result {
+    font-weight: bold;
+}

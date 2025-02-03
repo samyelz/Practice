@@ -63,21 +63,38 @@ function addToList2() {
 const toDoList3 = [];
 function renderToList() {
     htmlList = '';
-    for (let i = 0; i < toDoList3.length; i++) {
-        const toDoObject = toDoList3[i];
-        // const name = toDoObject.name;
-        // const date = toDoObject.date;
+    toDoList3.forEach((toDoObject, i) => {
         const { name, date } = toDoObject;
         const html = `<div>${name}</div>
          <div>${date}</div>
-        <button id="delete"
-        onclick="
-        toDoList3.splice(${i},1);
-        renderToList();
-        ">Delete</button>`;
+        <button class="delete"
+        >Delete</button>`;
         htmlList += html;
-    }
+    });
+
+    // for (let i = 0; i < toDoList3.length; i++) {
+    //     const toDoObject = toDoList3[i];
+    //     // const name = toDoObject.name;
+    //     // const date = toDoObject.date;
+    //     const { name, date } = toDoObject;
+    //     const html = `<div>${name}</div>
+    //      <div>${date}</div>
+    //     <button id="delete"
+    //     onclick="
+    //     toDoList3.splice(${i},1);
+    //     renderToList();
+    //     ">Delete</button>`;
+    //     htmlList += html;
+    //     }
+    //     document.querySelector('#to-do-list3').innerHTML = htmlList;
+    // }
     document.querySelector('#to-do-list3').innerHTML = htmlList;
+    document.querySelectorAll('.delete').forEach((deletButton, i) => {
+        deletButton.addEventListener('click', () => {
+            toDoList3.splice(i, 1);
+            renderToList();
+        });
+    });
 }
 
 function addToList3() {
